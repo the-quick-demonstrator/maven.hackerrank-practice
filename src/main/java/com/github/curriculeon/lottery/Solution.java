@@ -1,6 +1,6 @@
-package com.github.curriculeon;
+package com.github.curriculeon.lottery;
 
-public class MyObject {
+public class Solution {
     public int solution(int n) {
         return new CouponNumbers(n).getLargestNumberOfWinners();
     }
