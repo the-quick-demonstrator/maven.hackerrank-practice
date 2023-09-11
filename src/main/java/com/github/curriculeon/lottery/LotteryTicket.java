@@ -18,8 +18,8 @@ public class LotteryTicket implements Comparable<LotteryTicket> {
         return ticketNumber;
     }
 
-    public IntStream getDigits() {
-        return digits;
+    public int[] getDigits() {
+        return digits.toArray();
     }
 
     public Integer getTicketValue() {
