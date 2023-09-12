@@ -9,10 +9,10 @@ public class AdjacentRemover {
         this.isWendysTurns = true;
     }
 
-    public boolean canMoveBoth() {
+    public boolean canEitherMove() {
         boolean cmb = canMoveBob();
         boolean cmw = canMoveWendy();
-        return cmb && cmw;
+        return cmb || cmw;
     }
 
     public boolean canMoveBob() {
@@ -25,7 +25,7 @@ public class AdjacentRemover {
 
     public void play() {
         final StringBuilder sb = new StringBuilder(this.input);
-        while (canMoveBob() || canMoveWendy()) {
+        while (canEitherMove()) {
             String characterToEvaluate = "www";
             if (!isWendysTurns) {
                 characterToEvaluate = "bbb";
