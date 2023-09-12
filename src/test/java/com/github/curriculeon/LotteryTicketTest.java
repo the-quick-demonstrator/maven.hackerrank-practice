@@ -41,9 +41,69 @@ public class LotteryTicketTest {
         rangeTest(90, 91);
     }
 
+    @Test
+    public void test12() {
+        test(12, 3);
+    }
+
 
     @Test
-    public void test() {
+    public void patternDemo() {
+        // two 9s expected in the 10s
+        test(10, 1);
+        test(11, 2);
+        test(12, 3);
+        test(13, 4);
+        test(14, 5);
+        test(15, 6);
+        test(17, 8);
+        test(18, 9);
+        test(19, 9);
+
+        // three 8s expected in the 20s
+        test(20, 1);
+        test(27, 8);
+        test(28, 8);
+        test(29, 8);
+
+        // four 7s expected in the 30s
+        test(32, 3);
+        test(33, 4);
+        test(34, 5);
+        test(35, 6);
+        test(36, 7);
+        test(37, 7);
+        test(38, 7);
+        test(39, 7);
+
+        // five 6s expected in the 40s
+        test(40, 1);
+        test(47, 6);
+        test(48, 6);
+        test(49, 6);
+
+        test(50, 1);
+        test(53, 4);
+        test(54, 5);
+        test(55, 5);
+        test(57, 5);
+        test(58, 5);
+
+        test(68, 4);
+        test(78, 3);
+        test(88, 2);
+        test( 98, 1);
+
+        test(100, 1);
+        test(108, 1);
+        test(118, 1);
+        test(1222, 1);
+
+
+    }
+
+    @Test
+    public void test29() {
         test(29, 8);
     }
 
@@ -92,6 +152,7 @@ public class LotteryTicketTest {
     public void test101() {
         test(101, 1);
     }
+
     @Test
     public void test102() {
         test(102, 1);

@@ -51,4 +51,8 @@ public class LotteryTickets {
         }
         return result;
     }
+
+    public List<LotteryTicket> getLotteryTicketList() {
+        return lotteryTicketList;
+    }
 }

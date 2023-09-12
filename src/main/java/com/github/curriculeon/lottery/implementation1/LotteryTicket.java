@@ -32,4 +32,12 @@ public class LotteryTicket implements Comparable<LotteryTicket> {
     public int compareTo(LotteryTicket o) {
         return this.getTicketNumber().compareTo(o.getTicketNumber());
     }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "ticketNumber=" + ticketNumber +
+                ", sum=" + getTicketDigitSum() +
+                '}';
+    }
 }
