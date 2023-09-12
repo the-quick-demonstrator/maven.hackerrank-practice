@@ -10,6 +10,6 @@
 ### Example
 * The value of `n` is `12`
 * The list of coupon numbers generated from 1 to `n` is `[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]`.
-* The sums of the digits are [1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3]`.
+* The sums of the digits are `[1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3]`.
 * The largest number of winners is `2` which will occur for coupons numbered `[1, 10]`, `[2, 11]` and `[3, 12]`.
 * The maximum number of possible winners occurs for any of these `3` possible values of `s`, so `3` is the answer.
