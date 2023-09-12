@@ -9,11 +9,6 @@ import org.junit.Test;
 public class LotteryTicketTest {
     // given
     private void test(LotterySolution1 implementation, int numberOfLotteryTickets, int expected) {
-        final LotteryTickets lotteryTickets = new LotteryTickets(numberOfLotteryTickets);
-        System.out.println("getSumsAndRespectiveLotteryNumbers = " + lotteryTickets.getSumsAndRespectiveLotteryNumbers());
-        System.out.println("getLargestNumberOfWinner = " + lotteryTickets.getLargestNumberOfWinners());
-        System.out.println("getListOfLargestNumberOfWinners = " + lotteryTickets.getListOfLargestNumberOfWinners());
-
         // given
         int actual = implementation.solution(numberOfLotteryTickets);
 
