@@ -1,29 +1,31 @@
 package com.github.curriculeon.lottery;
 
-import java.util.Arrays;
-import java.util.stream.IntStream;
+import java.util.ArrayList;
+import java.util.List;
 
 public class LotteryTicket implements Comparable<LotteryTicket> {
     private final Integer ticketNumber;
-    private final IntStream digits;
+    private final List<Integer> digits;
 
     public LotteryTicket(Integer ticketNumber) {
         this.ticketNumber = ticketNumber;
-        this.digits = Arrays
-                .stream(ticketNumber.toString().split(""))
-                .mapToInt(Integer::parseInt);
+        this.digits = new ArrayList<>();
+        for (String digitAsString : ticketNumber.toString().split("")) {
+            Integer digitAsInteger = Integer.parseInt(digitAsString);
+            digits.add(digitAsInteger);
+        }
     }
 
     public Integer getTicketNumber() {
         return ticketNumber;
     }
 
-    public int[] getDigits() {
-        return digits.toArray();
-    }
-
-    public Integer getTicketValue() {
-        return digits.sum();
+    public Integer getTicketDigitSum() {
+        int sum = 0;
+        for(int digit : digits) {
+            sum += digit;
+        }
+        return sum;
     }
 
     @Override

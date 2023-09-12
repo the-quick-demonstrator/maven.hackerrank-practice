@@ -13,7 +13,7 @@ public class Solution {
             final int currentLowerBound = upperAndLowerBound.get(1);
             final NumberRange currentNumberRange = new NumberRange(currentUpperBound, currentLowerBound);
             final Integer[] currentUniqueDigits = currentNumberRange.getValuesWithUniqueDigits();
-            Arrays.sort(currentUniqueDigits); // ensure any permutation of these values are in an identical order
+            System.out.println(currentNumberRange.getValuesWithUniqueDigits().length);
             allRecordeUniqueDigits.add(currentUniqueDigits);
         }
         return allRecordeUniqueDigits.size();

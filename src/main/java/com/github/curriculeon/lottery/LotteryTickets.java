@@ -1,31 +1,28 @@
 package com.github.curriculeon.lottery;
 
-import java.sql.Array;
 import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
-public class CouponNumbers {
+public class LotteryTickets {
     private final List<LotteryTicket> lotteryTicketList;
 
 
-    public CouponNumbers(int n) {
-        this.lotteryTicketList = IntStream
-                .range(1, n)
-                .mapToObj(LotteryTicket::new)
-                .collect(Collectors.toList());
+    public LotteryTickets(int numberOfLotteryTickets) {
+        this.lotteryTicketList = new ArrayList<>();
+        for (int ticketNumber = 1; ticketNumber < numberOfLotteryTickets; ticketNumber++) {
+            lotteryTicketList.add(new LotteryTicket(ticketNumber));
+        }
     }
 
     public Map<Integer, List<Integer>> getSumsAndRespectiveLotteryNumbers() {
         Map<Integer, List<Integer>> map = new HashMap<>();
-        lotteryTicketList.forEach(lotteryTicket -> {
-            final int lotteryTicketValue = lotteryTicket.getTicketValue();
+        for (LotteryTicket lotteryTicket : lotteryTicketList) {
+            final int lotteryTicketValue = lotteryTicket.getTicketDigitSum();
             final int lotteryTicketNumber = lotteryTicket.getTicketNumber();
             map.putIfAbsent(lotteryTicketNumber, new ArrayList<>());
-            final List<Integer> lotteryTicketValues = map.get(lotteryTicketValue);
-            lotteryTicketValues.add(lotteryTicket.getTicketNumber());
-            map.put(lotteryTicketNumber, lotteryTicketValues);
-        });
+            final List<Integer> lotteryTicketNumbers = map.get(lotteryTicketValue);
+            lotteryTicketNumbers.add(lotteryTicket.getTicketNumber());
+            map.put(lotteryTicketNumber, lotteryTicketNumbers);
+        }
         return map;
     }
 
