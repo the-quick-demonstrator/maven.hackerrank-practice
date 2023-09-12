@@ -1,79 +1,99 @@
 package com.github.curriculeon;
 
-import com.github.curriculeon.lottery.LotteryTicketSolutionInterface;
 import com.github.curriculeon.lottery.implementation1.LotterySolution1;
-import com.github.curriculeon.lottery.implementation1.LotteryTickets;
 import org.junit.Assert;
 import org.junit.Test;
 
 public class LotteryTicketTest {
     // given
-    private void test(LotterySolution1 implementation, int numberOfLotteryTickets, int expected) {
-        // given
-        int actual = implementation.solution(numberOfLotteryTickets);
+    private void test(int numberOfLotteryTickets, int expected) {
+        System.out.println(new String(new char[25]).replaceAll(String.valueOf(Character.MIN_VALUE), "-"));
+        System.out.println(numberOfLotteryTickets);
+        final LotterySolution1 implementation = new LotterySolution1();
+
+        // when
+        final int actual = implementation.solution(numberOfLotteryTickets);
 
         // then
         Assert.assertEquals(expected, actual);
     }
 
-    private void test(int input, int expected) {
-        test(new LotterySolution1(), input, expected);
-    }
-
-    @Test(expected = IndexOutOfBoundsException.class)
-    public void test1() {
-        for (int i = 0; i < 9; i++) {
-            test(i, i);
+    private void rangeTest(int start, int end) {
+        final int offset = start - 1;
+        for (int i = start; i < end; i++) {
+            final int numberOfLotteryTickets = i;
+            final int expected = numberOfLotteryTickets - offset;
+            test(numberOfLotteryTickets, expected);
         }
     }
 
     @Test
-    public void test2() {
-        test(11, 2);
+    public void rangeTest() {
+        rangeTest(1, 10);
+        rangeTest(10, 19);
+        rangeTest(20, 28);
+        rangeTest(30, 37);
+        rangeTest(40, 46);
+        rangeTest(50, 55);
+        rangeTest(60, 64);
+        rangeTest(70, 73);
+        rangeTest(80, 82);
+        rangeTest(90, 91);
+    }
+
+
+    @Test
+    public void test() {
+        test(29, 8);
     }
 
     @Test
-    public void test3() {
-        test(12, 3);
+    public void test38() {
+        test(38, 7);
     }
 
     @Test
-    public void test4() {
-        test(13, 4);
+    public void test39() {
+        test(39, 7);
     }
 
     @Test
-    public void test5() {
-        test(14, 5);
+    public void test47() {
+        test(47, 6);
     }
 
     @Test
-    public void test6() {
-        test(15, 6);
+    public void test48() {
+        test(48, 6);
+    }
+
+
+    @Test
+    public void test92() {
+        test(92, 1);
     }
 
     @Test
-    public void test7() {
-        test(16, 7);
+    public void test93() {
+        test(93, 1);
     }
 
     @Test
-    public void test8() {
-        test(19, 9);
+    public void test94() {
+        test(94, 1);
     }
 
     @Test
-    public void test10() {
-        test(20, 1);
+    public void test100() {
+        test(100, 1);
     }
 
     @Test
-    public void test11() {
-        test(21, 2);
+    public void test101() {
+        test(101, 1);
     }
     @Test
-    public void test12() {
-        test(22, 3);
+    public void test102() {
+        test(102, 1);
     }
-
 }
