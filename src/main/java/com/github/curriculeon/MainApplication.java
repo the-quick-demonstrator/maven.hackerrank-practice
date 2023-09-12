@@ -1,10 +1,9 @@
 package com.github.curriculeon;
 
-import com.github.curriculeon.lottery.Solution;
+import com.github.curriculeon.lottery.implementation1.LotterySolution1;
 
 public class MainApplication {
     public static void main(String[] args) {
-        Solution myObject = new Solution();
-        myObject.solution(10);
+        System.out.println(new LotterySolution1().solution(12));
     }
 }

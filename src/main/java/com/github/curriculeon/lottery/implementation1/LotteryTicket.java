@@ -1,4 +1,4 @@
-package com.github.curriculeon.lottery;
+package com.github.curriculeon.lottery.implementation1;
 
 import java.util.ArrayList;
 import java.util.List;
