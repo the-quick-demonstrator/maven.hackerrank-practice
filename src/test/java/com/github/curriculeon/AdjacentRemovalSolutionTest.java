@@ -43,7 +43,7 @@ public class AdjacentRemovalSolutionTest {
     public void test3() {
         //given
         final String input = "bbbwww";
-        final String expected = "wendy";
+        final String expected = "bob";
         final AdjacentRemovalSolution solution = new AdjacentRemovalSolution();
 
         // when

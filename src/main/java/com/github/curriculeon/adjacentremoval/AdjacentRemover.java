@@ -1,7 +1,7 @@
 package com.github.curriculeon.adjacentremoval;
 
 public class AdjacentRemover {
-    private final String input;
+    private String input;
     private boolean isWendysTurns;
 
     public AdjacentRemover(String input) {
@@ -10,7 +10,9 @@ public class AdjacentRemover {
     }
 
     public boolean canMoveBoth() {
-        return canMoveBob() && canMoveWendy();
+        boolean cmb = canMoveBob();
+        boolean cmw = canMoveWendy();
+        return cmb && cmw;
     }
 
     public boolean canMoveBob() {
@@ -23,46 +25,36 @@ public class AdjacentRemover {
 
     public void play() {
         final StringBuilder sb = new StringBuilder(this.input);
-        while (true) {
+        while (canMoveBob() || canMoveWendy()) {
             String characterToEvaluate = "www";
-            if(!canMoveWendy()) {
-                break;
-            }
             if (!isWendysTurns) {
                 characterToEvaluate = "bbb";
-                if(!canMoveBob()) {
-                    break;
-                }
             }
             final int indexOfSubstring = sb.indexOf(characterToEvaluate);
             final int indexOfMiddleCharacter = indexOfSubstring + 1;
             sb.deleteCharAt(indexOfMiddleCharacter);
+            this.input = sb.toString();
             isWendysTurns = !isWendysTurns;
         }
     }
 
     public String solve() {
-        if (canMoveWendy() && !canMoveBob()) {
+        boolean bobCantMove = canMoveWendy() && !canMoveBob();
+        boolean wendyCantMove = !canMoveWendy() && canMoveBob();
+
+        if (bobCantMove) {
             return "wendy";
         }
-        if (!canMoveWendy() && canMoveBob()) {
+        if (wendyCantMove) {
             return "bob";
         }
 
-
-        if (canMoveBoth()) {
-            if (canMoveWendy() && !canMoveBob()) {
-                return "wendy";
-            } else {
-                play();
-                if(isWendysTurns) {
-                    return "bob";
-                } else {
-                    return "wendy";
-                }
-            }
+        play();
+        if (isWendysTurns) {
+            return "bob";
         } else {
-            return "bob";
+            return "wendy";
         }
+
     }
 }
