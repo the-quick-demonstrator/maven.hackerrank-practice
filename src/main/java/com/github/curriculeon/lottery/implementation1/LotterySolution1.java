@@ -1,13 +1,11 @@
 package com.github.curriculeon.lottery.implementation1;
 
-import com.github.curriculeon.lottery.SolutionInterface;
+import com.github.curriculeon.lottery.LotteryTicketSolutionInterface;
 
-public class LotterySolution1 implements SolutionInterface {
+public class LotterySolution1 implements LotteryTicketSolutionInterface {
     @Override
     public int solution(int numberOfLotteryTickets) {
         final LotteryTickets lotteryTickets = new LotteryTickets(numberOfLotteryTickets);
-        System.out.println(lotteryTickets.getSumsAndRespectiveLotteryNumbers());
-        System.out.println(lotteryTickets.getLargestNumberOfWinners());
-        return lotteryTickets.getTotalNumberOfLargestNumberOfWinners();
+        return lotteryTickets.getListOfLargestNumberOfWinners().size();
     }
 }

@@ -1,8 +1,8 @@
 package com.github.curriculeon.lottery.implementation2;
 
-import com.github.curriculeon.lottery.SolutionInterface;
+import com.github.curriculeon.lottery.LotteryTicketSolutionInterface;
 
-public class LotterySolution2 implements SolutionInterface {
+public class LotterySolution2 implements LotteryTicketSolutionInterface {
     @Override
     public int solution(int numberOfLotteryTickets) {
         return new Coupons(numberOfLotteryTickets).getLargestNumberOfWinners();

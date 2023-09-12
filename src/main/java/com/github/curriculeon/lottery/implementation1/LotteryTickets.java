@@ -40,13 +40,13 @@ public class LotteryTickets {
         return sortable.get(0).getValue().size();
     }
 
-    public Integer getTotalNumberOfLargestNumberOfWinners() {
-        int result = 0;
+    public Set<Map.Entry<Integer, List<Integer>>> getListOfLargestNumberOfWinners() {
+        Set<Map.Entry<Integer, List<Integer>>> result = new HashSet<>();
         final int largestNumberNumberWinners = getLargestNumberOfWinners();
         final Map<Integer, List<Integer>> sumsAndRespectiveLotteryNumbers = getSumsAndRespectiveLotteryNumbers();
         for(Map.Entry<Integer, List<Integer>> entry : sumsAndRespectiveLotteryNumbers.entrySet()) {
             if(entry.getValue().size() == largestNumberNumberWinners) {
-                result++;
+                result.add(entry);
             }
         }
         return result;
