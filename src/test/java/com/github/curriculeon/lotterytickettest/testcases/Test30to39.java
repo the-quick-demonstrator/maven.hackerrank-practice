@@ -1,7 +1,7 @@
 package com.github.curriculeon.lotterytickettest.testcases;
 
 import com.github.curriculeon.lotterytickettest.LotteryTicketTestInterface;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public interface Test30to39 extends LotteryTicketTestInterface {
     @Test

@@ -13,7 +13,7 @@ public class Solution {
 
     public int getSizeOfListOfLargestNumberOfWinners() {
         if(numberOfLotteryTickets < 10) {
-            return 1;
+            return numberOfLotteryTickets;
         }
         // get number of occurrences of the values of each key
         final int largestNumberOfOccurrences = getLargestNumberOfOccurrences();
@@ -29,21 +29,6 @@ public class Solution {
             }
         }
         return valueAndSumMap.size() / getLargestNumberOfOccurrences();
-    }
-
-    public int getSizeOfListOfLargestNumberOfWinners0() {
-        // get number of occurrences of the values of each key
-        final int largestNumberOfOccurrences = getLargestNumberOfOccurrences();
-        final Map<Integer, Integer> valueToDigitalSumMap = getValueToDigitalSumMap();
-        final Collection<Integer> values = valueToDigitalSumMap.values();
-        int numberOfLargest = 0;
-        for (Integer value : values) {
-            int numberOfOccurrences = Collections.frequency(values, value);
-            if (numberOfOccurrences == largestNumberOfOccurrences) {
-                numberOfLargest++;
-            }
-        }
-        return numberOfLargest;
     }
 
     public int getLargestNumberOfOccurrences() {
