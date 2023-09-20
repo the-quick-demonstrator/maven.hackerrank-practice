@@ -1,11 +1,11 @@
-package com.github.curriculeon.lotterytickettest.implementation1;
+package com.github.curriculeon.lotterytickettest.testcases;
 
 import com.github.curriculeon.lotterytickettest.LotteryTicketTestInterface;
 import org.junit.Test;
 
 public interface Test30to39 extends LotteryTicketTestInterface {
     @Test
-    default void test() {
+    default void test30to39() {
         // two 9s expected in the 10s
         test(30, 1);
         test(31, 2);

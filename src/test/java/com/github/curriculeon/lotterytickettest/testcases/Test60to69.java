@@ -1,11 +1,11 @@
-package com.github.curriculeon.lotterytickettest.implementation1;
+package com.github.curriculeon.lotterytickettest.testcases;
 
 import com.github.curriculeon.lotterytickettest.LotteryTicketTestInterface;
 import org.junit.Test;
 
 public interface Test60to69 extends LotteryTicketTestInterface {
     @Test
-    default void test() {
+    default void test60to69() {
         test(60, 1);
         test(62, 3);
         test(63, 4); // anomaly start point

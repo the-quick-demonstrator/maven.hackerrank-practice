@@ -1,4 +1,4 @@
-package com.github.curriculeon.lotterytickettest.implementation1;
+package com.github.curriculeon.lotterytickettest.testcases;
 
 import com.github.curriculeon.lotterytickettest.LotteryTicketTestInterface;
 import org.junit.Test;

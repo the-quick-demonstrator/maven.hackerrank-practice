@@ -1,30 +1,11 @@
-package com.github.curriculeon.lotterytickettest.implementation2;
+package com.github.curriculeon.lotterytickettest.testcases;
 
-import com.github.curriculeon.lottery.implementation2.LotterySolution2;
-import org.junit.Assert;
+import com.github.curriculeon.lotterytickettest.LotteryTicketTestInterface;
 import org.junit.Test;
 
-public class MainTest {
-    // given
-    private void test(int numberOfLotteryTickets, int expected) {
-        System.out.println(new String(new char[25]).replaceAll(String.valueOf(Character.MIN_VALUE), "-"));
-        System.out.println(numberOfLotteryTickets);
-        final LotterySolution2 implementation = new LotterySolution2();
-
-        // when
-        final int actual = implementation.getSizeOfListOfLargestNumberOfWinners(numberOfLotteryTickets);
-
-        // then
-        Assert.assertEquals(expected, actual);
-    }
-
+public interface MainTest extends LotteryTicketTestInterface {
     @Test
-    public void patternTest() {
-        // nine 1s expected in the 0s
-        for (int i = 1; i < 9; i++) {
-            //test(i, 1);
-        }
-
+    default void patternTest() {
         // two 9s expected in the 10s
         test(10, 1);
         test(11, 2);

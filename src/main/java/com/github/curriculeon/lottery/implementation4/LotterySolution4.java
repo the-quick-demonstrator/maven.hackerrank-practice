@@ -1,8 +1,8 @@
-package com.github.curriculeon.lottery.implementation5;
+package com.github.curriculeon.lottery.implementation4;
 
 import com.github.curriculeon.lottery.LotteryTicketSolutionInterface;
 
-public class LotterySolution5 implements LotteryTicketSolutionInterface {
+public class LotterySolution4 implements LotteryTicketSolutionInterface {
 
 
 
