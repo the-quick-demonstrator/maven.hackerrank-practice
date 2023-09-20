@@ -6,6 +6,11 @@ import org.junit.jupiter.api.Test;
 public interface MainTest extends LotteryTicketTestInterface {
     @Test
     default void patternTest() {
+        // nine 1s expected in the 0s
+        for (int i = 1; i < 9; i++) {
+            test(i, i);
+        }
+
         // two 9s expected in the 10s
         test(10, 1);
         test(11, 2);

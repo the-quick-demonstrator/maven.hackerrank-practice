@@ -3,11 +3,11 @@ package com.github.curriculeon.lottery.implementation4;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class Solution {
+public class LotteryCouponEvaluator {
     private Integer numberOfLotteryTickets;
     private ConcurrentHashMap<Integer, Integer> valueToSumMap;
 
-    public Solution(Integer numberOfLotteryTickets) {
+    public LotteryCouponEvaluator(Integer numberOfLotteryTickets) {
         this.numberOfLotteryTickets = numberOfLotteryTickets;
     }
 

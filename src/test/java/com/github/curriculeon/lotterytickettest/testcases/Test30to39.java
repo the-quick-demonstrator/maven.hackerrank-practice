@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 public interface Test30to39 extends LotteryTicketTestInterface {
     @Test
     default void test30to39() {
-        // two 9s expected in the 10s
+        // four 7s expected in the 30s
         test(30, 1);
         test(31, 2);
         test(32, 3);

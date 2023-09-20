@@ -8,6 +8,6 @@ public class LotterySolution4 implements LotteryTicketSolutionInterface {
 
     @Override
     public int getSizeOfListOfLargestNumberOfWinners(Integer numberOfLotteryTickets) {
-        return new Solution(numberOfLotteryTickets).getSizeOfListOfLargestNumberOfWinners();
+        return new LotteryCouponEvaluator(numberOfLotteryTickets).getSizeOfListOfLargestNumberOfWinners();
     }
 }

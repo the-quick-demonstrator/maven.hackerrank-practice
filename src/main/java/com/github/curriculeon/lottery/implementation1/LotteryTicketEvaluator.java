@@ -2,12 +2,12 @@ package com.github.curriculeon.lottery.implementation1;
 
 import java.util.*;
 
-public class LotteryTickets {
+public class LotteryTicketEvaluator {
     private final List<LotteryTicket> lotteryTicketList;
     private Map<Integer, List<Integer>> map;
 
 
-    public LotteryTickets(int numberOfLotteryTickets) {
+    public LotteryTicketEvaluator(int numberOfLotteryTickets) {
         this.lotteryTicketList = new ArrayList<>();
         for (int ticketNumber = 1; ticketNumber <= numberOfLotteryTickets; ticketNumber++) {
             lotteryTicketList.add(new LotteryTicket(ticketNumber));

@@ -5,15 +5,16 @@ import java.util.List;
 
 public class LotteryTicket implements Comparable<LotteryTicket> {
     private final Integer ticketNumber;
-    private final List<Integer> digits;
+    private final int ticketValue;
 
     public LotteryTicket(Integer ticketNumber) {
-        this.ticketNumber = ticketNumber;
-        this.digits = new ArrayList<>();
+        int sum = 0;
         for (String digitAsString : ticketNumber.toString().split("")) {
             Integer digitAsInteger = Integer.parseInt(digitAsString);
-            digits.add(digitAsInteger);
+            sum += digitAsInteger;
         }
+        this.ticketValue = sum;
+        this.ticketNumber = ticketNumber;
     }
 
     public Integer getTicketNumber() {
@@ -21,11 +22,7 @@ public class LotteryTicket implements Comparable<LotteryTicket> {
     }
 
     public Integer getTicketDigitSum() {
-        int sum = 0;
-        for(int digit : digits) {
-            sum += digit;
-        }
-        return sum;
+        return ticketValue;
     }
 
     @Override

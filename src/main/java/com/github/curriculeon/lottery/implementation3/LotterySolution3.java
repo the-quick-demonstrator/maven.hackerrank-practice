@@ -12,12 +12,11 @@ public class LotterySolution3 implements LotteryTicketSolutionInterface {
         }
         final boolean isGreaterThan100 = numberOfLotteryTickets > 100;
         final boolean isMultipleOf10 = numberOfLotteryTickets % 10 == 0;
-        final boolean shouldReturn1 = isMultipleOf10 || isGreaterThan100;
-        if (shouldReturn1) {
+        if (isMultipleOf10 || isGreaterThan100) {
             return 1;
         }
-        final int magnitude = numberOfLotteryTickets / 10;
-        final int numberOfMysteryNumbers = magnitude + 1;
+        final int scale = numberOfLotteryTickets / 10;
+        final int numberOfMysteryNumbers = scale + 1;
         final int upperBound = numberOfMysteryNumbers * 10;
         final int firstMysteryNumberFound = upperBound - numberOfMysteryNumbers;
         final boolean isFirstMysteryNumberFound = firstMysteryNumberFound == numberOfLotteryTickets;

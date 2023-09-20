@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 public interface Test60to69 extends LotteryTicketTestInterface {
     @Test
     default void test60to69() {
+        // seven 4s expected in the 60s
         test(60, 1);
         test(62, 3);
         test(63, 4); // anomaly start point

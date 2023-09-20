@@ -6,12 +6,12 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-public class Coupons {
+public class CouponEvaluator {
     private final Stream<Coupon> lotteryTicketStream;
     private Map<Integer, List<Integer>> sumToLotteryNumberMap;
 
 
-    public Coupons(int n) {
+    public CouponEvaluator(int n) {
         this.lotteryTicketStream = IntStream
                 .range(1, n + 1)
                 .mapToObj(Coupon::new);
@@ -21,12 +21,12 @@ public class Coupons {
         if (this.sumToLotteryNumberMap == null) {
             this.sumToLotteryNumberMap = new HashMap<>();
             lotteryTicketStream.forEach(lotteryTicket -> {
-                final int lotteryTicketValue = lotteryTicket.getTicketValue();
+                final int lotteryTicketSum = lotteryTicket.getTicketValue();
                 final int lotteryTicketNumber = lotteryTicket.getTicketNumber();
-                sumToLotteryNumberMap.putIfAbsent(lotteryTicketNumber, new ArrayList<>());
-                final List<Integer> lotteryTicketValues = sumToLotteryNumberMap.get(lotteryTicketValue);
-                lotteryTicketValues.add(lotteryTicket.getTicketNumber());
-                sumToLotteryNumberMap.put(lotteryTicketNumber, lotteryTicketValues);
+                sumToLotteryNumberMap.putIfAbsent(lotteryTicketSum, new ArrayList<>());
+                final List<Integer> lotteryTicketNumbers = sumToLotteryNumberMap.get(lotteryTicketSum);
+                lotteryTicketNumbers.add(lotteryTicketNumber);
+                sumToLotteryNumberMap.put(lotteryTicketSum, lotteryTicketNumbers);
             });
         }
         return this.sumToLotteryNumberMap;

@@ -5,15 +5,14 @@ import java.util.stream.IntStream;
 
 public class Coupon implements Comparable<Coupon> {
     private final Integer ticketNumber;
-    private final IntStream digits;
     private final int ticketValue;
 
     public Coupon(Integer ticketNumber) {
         this.ticketNumber = ticketNumber;
-        this.digits = Arrays
+        this.ticketValue = Arrays
                 .stream(ticketNumber.toString().split(""))
-                .mapToInt(Integer::parseInt);
-        this.ticketValue = digits.sum();
+                .mapToInt(Integer::parseInt)
+                .sum();
     }
 
     public Integer getTicketNumber() {
@@ -33,7 +32,7 @@ public class Coupon implements Comparable<Coupon> {
     public String toString() {
         return "Coupon{" +
                 "ticketNumber=" + ticketNumber +
-                ", sum=" + getTicketValue() +
+                ", sum=" + ticketValue +
                 '}';
     }
 }

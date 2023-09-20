@@ -7,6 +7,7 @@ public interface Test50to59 extends LotteryTicketTestInterface {
     
     @Test
     default void test50to59() {
+        // six 5s expected in the 50s
         test(50, 1);
         test(53, 4);
         test(54, 5); // anomaly start point
