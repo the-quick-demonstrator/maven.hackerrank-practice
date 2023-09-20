@@ -7,7 +7,7 @@ import java.util.List;
 
 //https://www.cnblogs.com/createman/p/17308284.html
 public class TicketEvaluator {
-    private Integer numberOfLotteryTickets;
+    private final Integer numberOfLotteryTickets;
 
     public TicketEvaluator(Integer numberOfLotteryTickets) {
         this.numberOfLotteryTickets = numberOfLotteryTickets;
