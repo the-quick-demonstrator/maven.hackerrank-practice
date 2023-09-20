@@ -4,7 +4,7 @@ import com.github.curriculeon.lottery.LotteryTicketSolutionInterface;
 
 public class LotterySolution2 implements LotteryTicketSolutionInterface {
     @Override
-    public int solution(Integer numberOfLotteryTickets) {
+    public int getSizeOfListOfLargestNumberOfWinners(Integer numberOfLotteryTickets) {
         return new Coupons(numberOfLotteryTickets).getLargestNumberOfWinners();
     }
 }
