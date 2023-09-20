@@ -12,10 +12,9 @@ public interface Test100to200 extends LotteryTicketTestInterface {
         // ten 1s expected in the 90s
         List<Integer> exceptions = Arrays.asList(107, 116, 125, 134, 143, 152, 161, 170, 190, 191, 192);
         for (int i = 100; i < 193; i++) {
-            if (exceptions.contains(i)) {
-                continue;
+            if (!exceptions.contains(i)) {
+                test(i, 1);
             }
-            test(i, 1);
         }
     }
 
