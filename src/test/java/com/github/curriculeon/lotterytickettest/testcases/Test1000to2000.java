@@ -8,7 +8,6 @@ import java.util.Arrays;
 import java.util.List;
 
 public interface Test1000to2000 extends LotteryTicketTestInterface {
-    @Disabled
     @Test
     default void test1000to2000() {
         // ten 1s expected in the 90s

@@ -2,7 +2,6 @@ package com.github.curriculeon.lottery.implementation2;
 
 
 import java.util.*;
-import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -53,9 +52,5 @@ public class CouponEvaluator {
             }
         }
         return result;
-    }
-
-    public List<Coupon> getLotteryTicketStream() {
-        return Stream.concat(lotteryTicketStream, Stream.empty()).collect(Collectors.toList());
     }
 }

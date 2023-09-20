@@ -11,40 +11,14 @@ public interface Test100to200 extends LotteryTicketTestInterface {
     default void test100to193() {
         // ten 1s expected in the 90s
         List<Integer> exceptions = Arrays.asList(107, 116, 125, 134, 143, 152, 161, 170, 190, 191, 192);
-        for (int i = 100; i < 193; i++) {
-            if (!exceptions.contains(i)) {
-                test(i, 1);
+        for (int numberOfLotteryTickets = 100; numberOfLotteryTickets < 193; numberOfLotteryTickets++) {
+            if (!exceptions.contains(numberOfLotteryTickets)) {
+                test(numberOfLotteryTickets, 1);
             }
+        }
+        for(int exception : exceptions) {
+            test(exception, 2);
         }
     }
 
-    @Test
-    default void test107() {
-        test(107, 2);
-    }
-
-    @Test
-    default void test116() {
-        test(116, 2);
-    }
-
-    @Test
-    default void test134() {
-        test(134, 2);
-    }
-
-    @Test
-    default void test143() {
-        test(143, 2);
-    }
-
-    @Test
-    default void test152() {
-        test(143, 2);
-    }
-
-    @Test
-    default void test161() {
-        test(143, 2);
-    }
 }

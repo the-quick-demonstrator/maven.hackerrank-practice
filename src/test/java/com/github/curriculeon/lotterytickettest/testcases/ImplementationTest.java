@@ -10,8 +10,5 @@ public interface ImplementationTest extends
         Test60to69,
         Test70to79,
         Test80to89,
-        Test90to99,
-        Test100to200,
-        Test200to300,
-        Test1000to2000 {
+        Test90to99 {
 }

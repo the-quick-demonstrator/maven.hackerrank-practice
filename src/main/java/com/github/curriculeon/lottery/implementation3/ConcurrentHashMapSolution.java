@@ -2,7 +2,7 @@ package com.github.curriculeon.lottery.implementation3;
 
 import com.github.curriculeon.lottery.LotteryTicketSolutionInterface;
 
-public class LotterySolution3 implements LotteryTicketSolutionInterface {
+public class ConcurrentHashMapSolution implements LotteryTicketSolutionInterface {
 
 
 

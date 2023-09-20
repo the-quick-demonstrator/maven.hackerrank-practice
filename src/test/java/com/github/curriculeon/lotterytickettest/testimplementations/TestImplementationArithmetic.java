@@ -1,12 +1,15 @@
 package com.github.curriculeon.lotterytickettest.testimplementations;
 
 import com.github.curriculeon.lottery.LotteryTicketSolutionInterface;
-import com.github.curriculeon.lottery.implementation1.LotterySolution1;
+import com.github.curriculeon.lottery.implementation4.ArithmeticSolution;
 import com.github.curriculeon.lotterytickettest.testcases.ImplementationTest;
+import org.junit.jupiter.api.Disabled;
 
-public class TestImplementation1 implements ImplementationTest {
+public class TestImplementationArithmetic implements ImplementationTest {
+
+
     @Override
     public LotteryTicketSolutionInterface getImplementation() {
-        return new LotterySolution1();
+        return new ArithmeticSolution();
     }
 }

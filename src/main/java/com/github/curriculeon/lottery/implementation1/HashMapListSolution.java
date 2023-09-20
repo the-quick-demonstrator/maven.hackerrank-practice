@@ -2,7 +2,7 @@ package com.github.curriculeon.lottery.implementation1;
 
 import com.github.curriculeon.lottery.LotteryTicketSolutionInterface;
 
-public class LotterySolution1 implements LotteryTicketSolutionInterface {
+public class HashMapListSolution implements LotteryTicketSolutionInterface {
     @Override
     public int getSizeOfListOfLargestNumberOfWinners(Integer numberOfLotteryTickets) {
         final LotteryTicketEvaluator lotteryTickets = new LotteryTicketEvaluator(numberOfLotteryTickets);

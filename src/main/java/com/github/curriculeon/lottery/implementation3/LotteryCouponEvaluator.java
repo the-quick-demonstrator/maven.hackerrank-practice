@@ -4,7 +4,7 @@ import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class LotteryCouponEvaluator {
-    private Integer numberOfLotteryTickets;
+    private final Integer numberOfLotteryTickets;
     private ConcurrentHashMap<Integer, Integer> valueToSumMap;
 
     public LotteryCouponEvaluator(Integer numberOfLotteryTickets) {
