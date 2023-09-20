@@ -14,11 +14,11 @@ public class TicketEvaluator {
     }
 
     public int getSizeOfListOfLargestNumberOfWinners() {
-        List<Integer> list = getListOfWinners();
         int maxBuffer = 0;
-        Integer max = Collections.max(list);
-        for (Integer integer : list) {
-            boolean isListOfLargestNumberOfWinners = max == integer.intValue();
+        final List<Integer> list = getListOfWinners();
+        final Integer max = Collections.max(list);
+        for (final Integer integer : list) {
+            final boolean isListOfLargestNumberOfWinners = max == integer.intValue();
             if (isListOfLargestNumberOfWinners) {
                 maxBuffer++;
             }
@@ -27,12 +27,12 @@ public class TicketEvaluator {
     }
 
     private List<Integer> getListOfWinners() {
-        List<Integer> list = new ArrayList<>();
-        int[] ticketSums = getTicketSums();
-        int count = Arrays.stream(ticketSums).max().getAsInt();
+        final List<Integer> list = new ArrayList<>();
+        final int[] ticketSums = getTicketSums();
+        final int count = Arrays.stream(ticketSums).max().getAsInt();
         for (int j = 1; j <= count; j++) {
             int val = 0;
-            for (int k : ticketSums) {
+            for (final int k : ticketSums) {
                 if (j == k) {
                     val++;
                 }
@@ -43,11 +43,11 @@ public class TicketEvaluator {
     }
 
     private int[] getTicketSums() {
-        int[] arr = new int[numberOfLotteryTickets];
+        final int[] arr = new int[numberOfLotteryTickets];
         for (int i = 1; i <= numberOfLotteryTickets; i++) {
             int sum = 0;
-            String[] strs = String.valueOf(i).split("");
-            for (String str : strs) {
+            final String[] strs = String.valueOf(i).split("");
+            for (final String str : strs) {
                 sum += Integer.parseInt(str);
             }
             arr[i - 1] = sum;
