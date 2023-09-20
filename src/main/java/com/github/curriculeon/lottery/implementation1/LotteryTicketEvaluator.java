@@ -15,8 +15,8 @@ public class LotteryTicketEvaluator {
     }
 
     public Map<Integer, List<Integer>> getSumsAndRespectiveLotteryNumbers() {
-        if(map == null) {
-            Map<Integer, List<Integer>> map = new HashMap<>();
+        if (map == null) {
+            this.map = new HashMap<>();
             for (LotteryTicket lotteryTicket : lotteryTicketList) {
                 final int lotteryTicketSum = lotteryTicket.getTicketDigitSum();
                 final int lotteryTicketNumber = lotteryTicket.getTicketNumber();
@@ -25,7 +25,6 @@ public class LotteryTicketEvaluator {
                 lotteryTicketNumbers.add(lotteryTicketNumber);
                 map.put(lotteryTicketSum, lotteryTicketNumbers);
             }
-            this.map = map;
         }
         return map;
     }
@@ -44,8 +43,8 @@ public class LotteryTicketEvaluator {
         Set<Map.Entry<Integer, List<Integer>>> result = new HashSet<>();
         final int largestNumberNumberWinners = getLargestNumberOfWinners();
         final Map<Integer, List<Integer>> sumsAndRespectiveLotteryNumbers = getSumsAndRespectiveLotteryNumbers();
-        for(Map.Entry<Integer, List<Integer>> entry : sumsAndRespectiveLotteryNumbers.entrySet()) {
-            if(entry.getValue().size() == largestNumberNumberWinners) {
+        for (Map.Entry<Integer, List<Integer>> entry : sumsAndRespectiveLotteryNumbers.entrySet()) {
+            if (entry.getValue().size() == largestNumberNumberWinners) {
                 result.add(entry);
             }
         }

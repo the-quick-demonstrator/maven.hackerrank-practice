@@ -8,7 +8,7 @@ import java.util.stream.Stream;
 
 public class CouponEvaluator {
     private final Stream<Coupon> lotteryTicketStream;
-    private Map<Integer, List<Integer>> sumToLotteryNumberMap;
+    private Map<Integer, List<Integer>> map;
 
 
     public CouponEvaluator(int n) {
@@ -18,18 +18,18 @@ public class CouponEvaluator {
     }
 
     public Map<Integer, List<Integer>> getSumsAndRespectiveLotteryNumbers() {
-        if (this.sumToLotteryNumberMap == null) {
-            this.sumToLotteryNumberMap = new HashMap<>();
+        if (this.map == null) {
+            this.map = new HashMap<>();
             lotteryTicketStream.forEach(lotteryTicket -> {
                 final int lotteryTicketSum = lotteryTicket.getTicketValue();
                 final int lotteryTicketNumber = lotteryTicket.getTicketNumber();
-                sumToLotteryNumberMap.putIfAbsent(lotteryTicketSum, new ArrayList<>());
-                final List<Integer> lotteryTicketNumbers = sumToLotteryNumberMap.get(lotteryTicketSum);
+                map.putIfAbsent(lotteryTicketSum, new ArrayList<>());
+                final List<Integer> lotteryTicketNumbers = map.get(lotteryTicketSum);
                 lotteryTicketNumbers.add(lotteryTicketNumber);
-                sumToLotteryNumberMap.put(lotteryTicketSum, lotteryTicketNumbers);
+                map.put(lotteryTicketSum, lotteryTicketNumbers);
             });
         }
-        return this.sumToLotteryNumberMap;
+        return this.map;
     }
 
     public Integer getLargestNumberOfWinners() {
@@ -37,7 +37,7 @@ public class CouponEvaluator {
         sortable.sort((entry1, entry2) -> {
             int size1 = entry1.getValue().size();
             int size2 = entry2.getValue().size();
-            return Integer.compare(size1, size2);
+            return Integer.compare(size2, size1);
         });
         return sortable.get(0).getValue().size();
     }
