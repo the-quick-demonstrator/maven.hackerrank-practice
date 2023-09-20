@@ -5,6 +5,11 @@ import com.github.curriculeon.lottery.LotteryTicketSolutionInterface;
 public class LotterySolution2 implements LotteryTicketSolutionInterface {
     @Override
     public int getSizeOfListOfLargestNumberOfWinners(Integer numberOfLotteryTickets) {
-        return new Coupons(numberOfLotteryTickets).getLargestNumberOfWinners();
+        final Coupons coupons =new Coupons(numberOfLotteryTickets);
+//        System.out.println("getLotteryTicketList = " + coupons.getLotteryTicketStream());
+        System.out.println("getSumsAndRespectiveLotteryNumbers = " + coupons.getSumsAndRespectiveLotteryNumbers());
+        System.out.println("getLargestNumberOfWinner = " + coupons.getLargestNumberOfWinners());
+        System.out.println("getListOfLargestNumberOfWinners = " + coupons.getListOfLargestNumberOfWinners());
+        return coupons.getListOfLargestNumberOfWinners().size();
     }
 }

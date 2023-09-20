@@ -1,8 +1,8 @@
 package com.github.curriculeon;
 
 import com.github.curriculeon.adjacentremoval.AdjacentRemovalSolution;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 public class AdjacentRemovalSolutionTest {
 
@@ -18,7 +18,7 @@ public class AdjacentRemovalSolutionTest {
 
 
         // then
-        Assert.assertEquals(expected, actual);
+        Assertions.assertEquals(expected, actual);
     }
 
 
@@ -34,7 +34,7 @@ public class AdjacentRemovalSolutionTest {
 
 
         // then
-        Assert.assertEquals(expected, actual);
+        Assertions.assertEquals(expected, actual);
     }
 
 
@@ -51,7 +51,7 @@ public class AdjacentRemovalSolutionTest {
 
 
         // then
-        Assert.assertEquals(expected, actual);
+        Assertions.assertEquals(expected, actual);
     }
 
 
@@ -68,7 +68,7 @@ public class AdjacentRemovalSolutionTest {
 
 
         // then
-        Assert.assertEquals(expected, actual);
+        Assertions.assertEquals(expected, actual);
     }
 
 
@@ -85,7 +85,7 @@ public class AdjacentRemovalSolutionTest {
 
 
         // then
-        Assert.assertEquals(expected, actual);
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
@@ -100,7 +100,7 @@ public class AdjacentRemovalSolutionTest {
 
 
         // then
-        Assert.assertEquals(expected, actual);
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
@@ -115,7 +115,7 @@ public class AdjacentRemovalSolutionTest {
 
 
         // then
-        Assert.assertEquals(expected, actual);
+        Assertions.assertEquals(expected, actual);
     }
 
 
@@ -131,7 +131,7 @@ public class AdjacentRemovalSolutionTest {
 
 
         // then
-        Assert.assertEquals(expected, actual);
+        Assertions.assertEquals(expected, actual);
     }
 
 

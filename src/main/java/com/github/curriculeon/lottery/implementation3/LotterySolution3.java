@@ -6,10 +6,13 @@ public class LotterySolution3 implements LotteryTicketSolutionInterface {
 
     @Override
     public int getSizeOfListOfLargestNumberOfWinners(Integer numberOfLotteryTickets) {
-        final boolean isGreaterThan100 = numberOfLotteryTickets > 100;
         final boolean isLessThan10 = numberOfLotteryTickets < 10;
+        if(isLessThan10) {
+            return numberOfLotteryTickets;
+        }
+        final boolean isGreaterThan100 = numberOfLotteryTickets > 100;
         final boolean isMultipleOf10 = numberOfLotteryTickets % 10 == 0;
-        final boolean shouldReturn1 = isLessThan10 || isMultipleOf10 || isGreaterThan100;
+        final boolean shouldReturn1 = isMultipleOf10 || isGreaterThan100;
         if (shouldReturn1) {
             return 1;
         }
