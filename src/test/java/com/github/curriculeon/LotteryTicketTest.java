@@ -108,7 +108,7 @@ public class LotteryTicketTest {
         test(58, 5);
 
         // seven 4s expected in the 60s
-        test(63, 5);
+        test(63, 4);
 
         // eight 3s expected in the 70s
         test(78, 3);

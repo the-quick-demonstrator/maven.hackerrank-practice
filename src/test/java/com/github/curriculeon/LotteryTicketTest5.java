@@ -1,7 +1,6 @@
 package com.github.curriculeon;
 
-import com.github.curriculeon.lottery.implementation.LotterySolution5;
-import com.github.curriculeon.lottery.implementation3.LotterySolution3;
+import com.github.curriculeon.lottery.implementation4.LotterySolution4;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -10,7 +9,7 @@ public class LotteryTicketTest5 {
     private void test(int numberOfLotteryTickets, int expected) {
         System.out.println(new String(new char[25]).replaceAll(String.valueOf(Character.MIN_VALUE), "-"));
         System.out.println(numberOfLotteryTickets);
-        final LotterySolution5 implementation = new LotterySolution5();
+        final LotterySolution4 implementation = new LotterySolution4();
 
         // when
         final int actual = implementation.getSizeOfListOfLargestNumberOfWinners(numberOfLotteryTickets);
