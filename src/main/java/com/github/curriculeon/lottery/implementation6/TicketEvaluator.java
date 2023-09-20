@@ -18,7 +18,8 @@ public class TicketEvaluator {
         int maxBuffer = 0;
         Integer max = Collections.max(list);
         for (Integer integer : list) {
-            if (max == integer.intValue()) {
+            boolean isListOfLargestNumberOfWinners = max == integer.intValue();
+            if (isListOfLargestNumberOfWinners) {
                 maxBuffer++;
             }
         }
