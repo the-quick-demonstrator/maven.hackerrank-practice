@@ -10,6 +10,9 @@ public class LotterySolution3 implements LotteryTicketSolutionInterface {
         final boolean isLessThan10 = numberOfLotteryTickets < 10;
         final boolean isMultipleOf10 = numberOfLotteryTickets % 10 == 0;
         final boolean shouldReturn1 = isLessThan10 || isMultipleOf10 || isGreaterThan100;
+        if (shouldReturn1) {
+            return 1;
+        }
         final int magnitude = numberOfLotteryTickets / 10;
         final int lowerBound = magnitude * 10;
         final int upperBound = (magnitude + 1) * 10;
@@ -27,14 +30,10 @@ public class LotterySolution3 implements LotteryTicketSolutionInterface {
         final int numberOfMysteryNumbers = magnitude + 1;
         final int numberOfNonMysteryNumbers = 10 - numberOfMysteryNumbers;
         final int mysteryNumberResult = numberOfNonMysteryNumbers + 1;
-        final int delta = firstMysteryNumberFound - numberOfLotteryTickets;
-
-
-        if (shouldReturn1) {
-            return 1;
-        } else if (isMysteryNumber) {
+        if (isMysteryNumber) {
             return mysteryNumberResult;
         } else {
+            final int delta = firstMysteryNumberFound - numberOfLotteryTickets;
             return mysteryNumberResult - delta;
         }
     }
