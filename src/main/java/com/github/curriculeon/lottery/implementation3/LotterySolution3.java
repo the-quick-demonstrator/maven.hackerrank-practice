@@ -14,20 +14,13 @@ public class LotterySolution3 implements LotteryTicketSolutionInterface {
             return 1;
         }
         final int magnitude = numberOfLotteryTickets / 10;
-        final int lowerBound = magnitude * 10;
-        final int upperBound = (magnitude + 1) * 10;
-        Integer firstMysteryNumberFound = null;
-        for (int i = lowerBound; i < upperBound; i++) {
-            boolean isCurrentMysteryNumber = i % 9 == 0;
-            if (isCurrentMysteryNumber) {
-                firstMysteryNumberFound = i;
-                break;
-            }
-        }
+        final int numberOfMysteryNumbers = magnitude + 1;
+        final int upperBound = numberOfMysteryNumbers * 10;
+        final int firstMysteryNumberFound = upperBound - numberOfMysteryNumbers;
         final boolean isFirstMysteryNumberFound = firstMysteryNumberFound == numberOfLotteryTickets;
         final boolean isGreaterThanFirstMysteryNumberFound = firstMysteryNumberFound < numberOfLotteryTickets;
         final boolean isMysteryNumber = isFirstMysteryNumberFound || isGreaterThanFirstMysteryNumberFound;
-        final int numberOfMysteryNumbers = magnitude + 1;
+
         final int numberOfNonMysteryNumbers = 10 - numberOfMysteryNumbers;
         final int mysteryNumberResult = numberOfNonMysteryNumbers + 1;
         if (isMysteryNumber) {
