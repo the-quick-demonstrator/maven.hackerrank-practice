@@ -1,7 +1,6 @@
 package com.github.curriculeon;
 
-import com.github.curriculeon.lottery.implementation.LotterySolution5;
-import com.github.curriculeon.lottery.implementation3.LotterySolution3;
+import com.github.curriculeon.lottery.implementation5.LotterySolution5;
 import org.junit.Assert;
 import org.junit.Test;
 

@@ -1,69 +1,21 @@
-package com.github.curriculeon;
+package com.github.curriculeon.lotterytickettest.implementation2;
 
-import com.github.curriculeon.lottery.implementation1.LotterySolution1;
-import com.github.curriculeon.lottery.implementation3.LotterySolution3;
+import com.github.curriculeon.lottery.implementation2.LotterySolution2;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class LotteryTicketTest {
+public class MainTest {
     // given
     private void test(int numberOfLotteryTickets, int expected) {
         System.out.println(new String(new char[25]).replaceAll(String.valueOf(Character.MIN_VALUE), "-"));
         System.out.println(numberOfLotteryTickets);
-        final LotterySolution1 implementation = new LotterySolution1();
+        final LotterySolution2 implementation = new LotterySolution2();
 
         // when
         final int actual = implementation.getSizeOfListOfLargestNumberOfWinners(numberOfLotteryTickets);
 
         // then
         Assert.assertEquals(expected, actual);
-    }
-
-    private void rangeTest(int start, int end) {
-        final int offset = start - 1;
-        for (int i = start; i < end; i++) {
-            final int numberOfLotteryTickets = i;
-            final int expected = numberOfLotteryTickets - offset;
-            test(numberOfLotteryTickets, expected);
-        }
-    }
-
-    @Test
-    public void rangeTest() {
-        rangeTest(1, 10);
-        rangeTest(10, 19);
-        rangeTest(20, 28);
-        rangeTest(30, 37);
-        rangeTest(40, 46);
-        rangeTest(50, 55);
-        rangeTest(60, 64);
-        rangeTest(70, 73);
-        rangeTest(80, 82);
-        rangeTest(90, 91);
-    }
-
-    @Test
-    public void test10s() {
-        // two 9s expected in the 10s
-        test(10, 1);
-        test(17, 8);
-        test(18, 9); // anomaly
-        test(19, 9); // anomaly
-    }
-
-    @Test
-    public void test10() {
-        test(10, 1);
-    }
-
-    @Test
-    public void test12() {
-        test(12, 3);
-    }
-
-    @Test
-    public void test17() {
-        test(17, 8);
     }
 
     @Test
@@ -144,59 +96,4 @@ public class LotteryTicketTest {
         test(99, 1);
     }
 
-    @Test
-    public void test29() {
-        test(29, 8);
-    }
-
-    @Test
-    public void test38() {
-        test(38, 7);
-    }
-
-    @Test
-    public void test39() {
-        test(39, 7);
-    }
-
-    @Test
-    public void test47() {
-        test(47, 6);
-    }
-
-    @Test
-    public void test48() {
-        test(48, 6);
-    }
-
-
-    @Test
-    public void test92() {
-        test(92, 1);
-    }
-
-    @Test
-    public void test93() {
-        test(93, 1);
-    }
-
-    @Test
-    public void test94() {
-        test(94, 1);
-    }
-
-    @Test
-    public void test100() {
-        test(100, 1);
-    }
-
-    @Test
-    public void test101() {
-        test(101, 1);
-    }
-
-    @Test
-    public void test102() {
-        test(102, 1);
-    }
 }

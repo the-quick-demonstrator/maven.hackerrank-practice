@@ -1,4 +1,4 @@
-package com.github.curriculeon.lottery.implementation;
+package com.github.curriculeon.lottery.implementation5;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;

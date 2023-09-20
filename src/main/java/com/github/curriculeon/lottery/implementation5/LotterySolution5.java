@@ -1,9 +1,6 @@
-package com.github.curriculeon.lottery.implementation;
+package com.github.curriculeon.lottery.implementation5;
 
 import com.github.curriculeon.lottery.LotteryTicketSolutionInterface;
-
-import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
 
 public class LotterySolution5 implements LotteryTicketSolutionInterface {
 
