@@ -10,9 +10,8 @@ public class LotterySolution4 implements LotteryTicketSolutionInterface {
         if(isLessThan10) {
             return numberOfLotteryTickets;
         }
-        final boolean isGreaterThan100 = numberOfLotteryTickets > 100;
         final boolean isMultipleOf10 = numberOfLotteryTickets % 10 == 0;
-        if (isMultipleOf10 || isGreaterThan100) {
+        if (isMultipleOf10) {
             return 1;
         }
         final int scale = numberOfLotteryTickets / 10;
