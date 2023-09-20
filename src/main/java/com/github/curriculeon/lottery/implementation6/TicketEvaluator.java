@@ -14,16 +14,16 @@ public class TicketEvaluator {
     }
 
     public int getSizeOfListOfLargestNumberOfWinners() {
-        int maxBuffer = 0;
+        int sizeOfListOfLargestNumberOfWinners = 0;
         final List<Integer> list = getListOfWinners();
         final Integer max = Collections.max(list);
         for (final Integer integer : list) {
-            final boolean isListOfLargestNumberOfWinners = max == integer.intValue();
-            if (isListOfLargestNumberOfWinners) {
-                maxBuffer++;
+            final boolean isSizeOfListOfLargestNumberOfWinners = max == integer.intValue();
+            if (isSizeOfListOfLargestNumberOfWinners) {
+                sizeOfListOfLargestNumberOfWinners++;
             }
         }
-        return maxBuffer;
+        return sizeOfListOfLargestNumberOfWinners;
     }
 
     private List<Integer> getListOfWinners() {

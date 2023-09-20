@@ -6,8 +6,6 @@ import com.github.curriculeon.lotterytickettest.testcases.ImplementationTest;
 import org.junit.jupiter.api.Disabled;
 
 public class TestImplementationArithmetic implements ImplementationTest {
-
-
     @Override
     public LotteryTicketSolutionInterface getImplementation() {
         return new ArithmeticSolution();
